@@ -3,16 +3,28 @@
 import sys, re
 from argparse import ArgumentParser
 
+<<<<<<< HEAD
 parser = ArgumentParser(description="Classify a sequence as DNA or RNA and search for motifs")
 
+# Create the ArgumentParser object
+parser = ArgumentParser(description="Classify a sequence as DNA or RNA and search for motifs")
+
+# Add arguments for the sequence and motif
+>>>>>>> motif
 parser.add_argument("-s", "--seq", type=str, required=True, help="Input sequence")
 parser.add_argument("-m", "--motif", type=str, required=False, help="Motif")
 
+# Parse the arguments
 args = parser.parse_args()
 
+<<<<<<< HEAD
 args.seq = args.seq.upper()
 
+# Convert sequence to uppercase
+args.seq = args.seq.upper()
+>>>>>>> motif
 
+# Classify the sequence as DNA, RNA, or both
 if re.search('^[ACGTU]+$', args.seq):
     if re.search('T', args.seq):
         print('The sequence is DNA')
@@ -30,5 +42,8 @@ if args.motif:
     if re.search(args.motif, args.seq):
         print("FOUND")
     else:
+<<<<<<< HEAD
         print("Motif not found!")
 
+        print("NOT FOUND")
+>>>>>>> motif
