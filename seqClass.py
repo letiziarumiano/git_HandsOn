@@ -3,8 +3,7 @@
 import sys, re
 from argparse import ArgumentParser
 
-parser = ArgumentParser(description = 'Classify a DNA or RNA sequence, with a detailed check')
-
+parser = ArgumentParser(description = 'Classify a sequence as DNA or RNA')
 parser.add_argument("-s", "--seq", type = str, required = True, help = "Input sequence")
 
 if len(sys.argv) == 1:
@@ -12,6 +11,8 @@ if len(sys.argv) == 1:
     sys.exit(1)
 
 args = parser.parse_args()
+
+args.seq = args.seq.upper()  # This line converts the sequence to uppercase
 
 if re.search('^[ACGTU]+$', args.seq):
     if re.search('T', args.seq):
