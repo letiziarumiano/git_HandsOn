@@ -1,3 +1,5 @@
+this is the code with comments for seqclass.py in GitHub
+
 #!/usr/bin/env python
 
 import sys
@@ -49,4 +51,3 @@ if 'G' in args.seq:
     print(f"Percentage of G: {calculate_percentage(args.seq, 'G'):.2f}%")
 if 'U' in args.seq:
     print(f"Percentage of U: {calculate_percentage(args.seq, 'U'):.2f}%")
-
